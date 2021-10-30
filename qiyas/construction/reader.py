@@ -1,12 +1,12 @@
 '''A reader for the tables'''
 import csv
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Set
 
 from qiyas.construction.graph import UnitGraph
 
 # =================================================================================================
-def get_unit_types(unit_directory:Path)->set[str]:
+def get_unit_types(unit_directory:Path)->Set[str]:
     '''Returns the unit types found in a directory'''
 
     unit_filenames = unit_directory.glob('*')
@@ -22,7 +22,6 @@ def read_unit_table(type_name:str,
     # Construct the file names
     unit_names_table_filename     = unit_table_directory / (type_name+'_names.csv')
     unit_converson_table_filename = unit_table_directory / (type_name+'_conversions.csv')
-
 
     # Read the conversion table
     unit_graph = UnitGraph(type_name)
