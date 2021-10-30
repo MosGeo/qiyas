@@ -16,6 +16,9 @@ is_unit = unit_graph.is_unit('cm')
 d = qiyas.UNIT_TABLES_DIRECTORY / "distance_names.csv"
 
 generate_graphs(qiyas.UNIT_TABLES_DIRECTORY, qiyas.UNIT_GRAPHS_DIRECTORY)
-g2 = load_from_qs_files(qiyas.UNIT_GRAPHS_DIRECTORY)
-multplier = g2.get_multiplier('cm','km', 'distance')
+uc = load_from_qs_files(qiyas.UNIT_GRAPHS_DIRECTORY)
+multplier = uc.get_multiplier('km','cm', 'distance')
 print(multplier)
+x_m = 10
+x_cm = uc.to(x_m, 'cm')
+print(x_cm)

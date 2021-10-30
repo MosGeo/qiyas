@@ -1,6 +1,7 @@
 '''A unit convertor'''
-from typing import Dict, List
+from typing import Any, Dict, List
 from networkx.algorithms.shortest_paths.generic import shortest_path
+from varname import argname
 from qiyas.construction.graph import UnitGraph
 # =================================================================================================
 class UnitsTypeMismatch(Exception):
@@ -92,15 +93,27 @@ class UnitConvertor():
 
         # If it is fully constructed, it is a simple lookup
         if unit_graph.is_constructed:
-            weight = unit_graph.get_edge_data(unit1, unit2)['weight']
-            return weight
+            multiplier = unit_graph[unit1][unit2]['weight']
+            return multiplier
 
         # If it is not fully constructed, we calculate it manually
-        weight = 10
         path:List[str] = shortest_path(unit_graph, unit1, unit2, weight='weight')
+        multiplier = 1
+        for i in range(len(path)-1):
+            multiplier = multiplier * unit_graph[path[i]][path[i+1]]['weight']
 
-        print(path)
-
-        return weight
+        return ((unit1, unit2), used_unit_type, multiplier)
+    # ===========================================
+    def convert(self, value:Any, unit1:str, unit2:str, unit_type:str=None)->Any:
+        '''Converts a value to a new unit'''
+        multiplier_info = self.get_multiplier(unit1, unit2, unit_type)
+        multiplier = multiplier_info[2]
+        converted_value = value * multiplier
+        return converted_value
+    # ===========================================
+    def to(self, value, unit2:str, unit_type:str=None):
+        unit1 = argname('value').split('_')[-1]
+        converted_value = self.convert(value, unit1, unit2, unit_type)
+        return converted_value
 
 # =================================================================================================
