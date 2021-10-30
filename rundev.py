@@ -1,6 +1,6 @@
 '''Script used for quick testing'''
 import qiyas
-from qiyas.construction.reader import get_unit_types, read_unit_tables, generate_graphs
+from qiyas.construction.reader import get_unit_types, generate_graphs
 from qiyas.construction.graph import UnitGraph
 from qiyas.conversion.reader import load_from_qs_files
 

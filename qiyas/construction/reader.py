@@ -13,18 +13,18 @@ def get_unit_types(unit_directory:Path)->Set[str]:
     unit_types = set([Path(filename).stem.split('_')[0] for filename in unit_filenames])
     return unit_types
 # =================================================================================================
-def read_unit_table(type_name:str,
+def read_unit_table(unit_type:str,
                     unit_table_directory:Path,
                     is_force_add:bool=False,
                     is_construct:bool=True)->UnitGraph:
     '''Construct a unit graph from the csv file'''
 
     # Construct the file names
-    unit_names_table_filename     = unit_table_directory / (type_name+'_names.csv')
-    unit_converson_table_filename = unit_table_directory / (type_name+'_conversions.csv')
+    unit_names_table_filename     = unit_table_directory / (unit_type+'_names.csv')
+    unit_converson_table_filename = unit_table_directory / (unit_type+'_conversions.csv')
 
     # Read the conversion table
-    unit_graph = UnitGraph(type_name)
+    unit_graph = UnitGraph(unit_type)
 
     # Create the nodes
     with open(unit_names_table_filename, mode ='r', encoding='utf-8')as file:
@@ -51,11 +51,11 @@ def read_unit_tables(unit_directory:Path,
                      is_construct:bool=False)->Dict[str,UnitGraph]:
     '''Read the unit table in a dictionary'''
 
-    type_names = get_unit_types(unit_directory)
+    unit_types = get_unit_types(unit_directory)
 
     unit_graphs = {}
-    for type_name in type_names:
-        unit_graphs[type_name] = read_unit_table(type_name, unit_directory,
+    for unit_type in unit_types:
+        unit_graphs[unit_type] = read_unit_table(unit_type, unit_directory,
                                                  is_force_add, is_construct)
 
     return unit_graphs
@@ -66,9 +66,9 @@ def generate_graphs(unit_tables_directory:Path,
                     is_construct:bool=False):
     '''Generates the graphs'''
 
-    type_names = get_unit_types(unit_tables_directory)
-    for type_name in type_names:
-        unit_graph = read_unit_table(type_name, unit_tables_directory, is_force_add, is_construct)
-        graph_filename = unit_graphs_directory / (type_name+".qs")
+    unit_types = get_unit_types(unit_tables_directory)
+    for unit_type in unit_types:
+        unit_graph = read_unit_table(unit_type, unit_tables_directory, is_force_add, is_construct)
+        graph_filename = unit_graphs_directory / (unit_type+".qs")
         unit_graph.save(graph_filename)
 # =================================================================================================
