@@ -3,7 +3,7 @@ import csv
 from pathlib import Path
 from typing import Dict
 
-from .graph import UnitGraph
+from qiyas.construction.graph import UnitGraph
 
 # =================================================================================================
 def get_unit_types(unit_directory:Path)->set[str]:
