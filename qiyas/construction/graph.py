@@ -15,11 +15,14 @@ class UnitNotFound(Exception):
 # =================================================================================================
 class UnitGraph(nx.DiGraph):
     '''A unit graph for holding the unit table information'''
+    type:str
+    is_constructed:bool
 
     def __init__(self, type_name:str):
         '''Initializes the unit graph'''
         super().__init__()
         self.type = type_name
+        self.is_constructed = False
     # ===========================================
     def add_unit(self, abbreviation:str, name:str=None, comment:str=None):
         '''Adds a unit to the graph'''
@@ -45,7 +48,8 @@ class UnitGraph(nx.DiGraph):
         return self.has_node(unit)
     # ===========================================
     def construct_full_graph(self):
-        '''Constructs teh full unit graph'''
+        '''Constructs the full unit graph'''
+        self.is_constructed = True
         print('dlfkjldf')
     # ===========================================
     def visualize(self):
