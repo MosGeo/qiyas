@@ -17,5 +17,5 @@ d = qiyas.UNIT_TABLES_DIRECTORY / "distance_names.csv"
 
 generate_graphs(qiyas.UNIT_TABLES_DIRECTORY, qiyas.UNIT_GRAPHS_DIRECTORY)
 g2 = load_from_qs_files(qiyas.UNIT_GRAPHS_DIRECTORY)
-multplier = g2.get_multiplier('m','cm', 'distance')
+multplier = g2.get_multiplier('cm','km', 'distance')
 print(multplier)
