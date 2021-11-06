@@ -1,0 +1,11 @@
+unit1,unit2,multiplier
+km,m,1000
+m,cm,100
+cm,mm,10
+um,mm,1000
+um,nm,1000
+m,ft,3.2808399
+ft,in,12
+yd,ft,3
+mi,yd,1760
+nmi,mi,1.15077945
