@@ -38,4 +38,4 @@ multiplier_info = qs.get_multiplier('m', 'cm')
 ```
 
 ## Contribution
-Contributions are welcome, especially for unit tables. Create an issue first to discuss architectural change.
+Contributions are welcome, especially for unit tables ([Checkout unit tables](https://github.com/MosGeo/qiyas/tree/main/qiyas/unit_tables)). Create an issue first to discuss architectural change.
