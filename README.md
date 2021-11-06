@@ -6,7 +6,7 @@
 qias is lightweight easy-to-use non-opinionated unit conversion Python library for scientists and engineers. It is based on graph theory and allows easy customization and addition of new units via script. Each unit need to be only defined by one existing unit. qias is smart enough to figure out the rest.
 
 ## Important note
-This is a very early release to proove the concept. Everything is working as expected and there are no issues. conversion tables need to be added. Currently, there are some units for length, mass, and volume for testing.
+This is a very early release to prove the concept. Everything is working as expected and there are no issues. conversion tables need to be added. Currently, there are some units for length, mass, and volume for testing.
 
 ## Philosophy
 - Lightweight: it only relies on the `networkx` package to handle graph operations and `varname` to identify variable names.
@@ -37,5 +37,10 @@ x_cm = qs.to(x_m, 'cm')
 multiplier_info = qs.get_multiplier('m', 'cm')
 ```
 
+## Next
+- Documentation
+- Tests
+- Unit tables
+
 ## Contribution
-Contributions are welcome, especially for unit tables ([Checkout unit tables](https://github.com/MosGeo/qiyas/tree/main/qiyas/unit_tables)). Create an issue first to discuss architectural change.
+Contributions are welcome, especially for unit tables ([Checkout unit tables](https://github.com/MosGeo/qiyas/tree/main/qiyas/unit_tables)). Create an issue first to discuss architectural changes.
