@@ -34,7 +34,7 @@ x_m = 10
 x_cm = qs.to(x_m, 'cm')
 
 # Get multiplier information
-qs.get_multiplier('m', 'cm')
+multiplier_info = qs.get_multiplier('m', 'cm')
 ```
 
 ## Contribution
