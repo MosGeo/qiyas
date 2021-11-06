@@ -10,8 +10,10 @@ class MinimumPythonVersionNotMet(Exception):
     """Exception for when Python version is not compatible with the function"""
 
     def __init__(self, min_minor_version_required=8) -> None:
-        self.message = f"Minimum Python minor version {min_minor_version_required} " + \
-            "is required for this function"
+        self.message = (
+            f"Minimum Python minor version {min_minor_version_required} "
+            + "is required for this function"
+        )
         super().__init__(self.message)
 
 
