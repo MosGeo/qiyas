@@ -31,15 +31,31 @@ class UnitGraph(nx.DiGraph):
         self.is_constructed = False
 
     # ===========================================
-    def add_unit(self, abbreviation: str, name: str = None, comment: str = None):
+    def add_unit(
+        self,
+        abbreviation: str,
+        name: str = None,
+        latex: str = None,
+        comment: str = None,
+    ):
         """Adds a unit to the graph"""
-        self.add_node(abbreviation, name=name, comment=comment)
+        self.add_node(abbreviation, name=name, latex=latex, comment=comment)
 
     # ===========================================
     def add_conversion(
-        self, unit1: str, unit2: str, multiplier, is_force_add: bool = False
+        self,
+        unit1: str,
+        unit2: str,
+        multiplier,
+        is_force_add: bool = False,
+        verbose: bool = False,
     ):
         """Adds a unit conversion"""
+
+        if verbose is True:
+            print(
+                f"Adding conversion between {unit1} and {unit2} to type {self.unit_type}"
+            )
 
         # Check units
         for unit in [unit1, unit2]:

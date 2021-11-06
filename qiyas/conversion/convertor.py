@@ -1,8 +1,19 @@
 """A unit convertor"""
+import sys
 from typing import Any, Dict, List
 from networkx.algorithms.shortest_paths.generic import shortest_path
 from varname import argname
 from qiyas.construction.graph import UnitGraph
+
+# =================================================================================================
+class MinimumPythonVersionNotMet(Exception):
+    """Exception for when Python version is not compatible with the function"""
+
+    def __init__(self, min_minor_version_required=8) -> None:
+        self.message = f"Minimum Python minor version {min_minor_version_required} " + \
+            "is required for this function"
+        super().__init__(self.message)
+
 
 # =================================================================================================
 class UnitsTypeMismatch(Exception):
@@ -10,8 +21,8 @@ class UnitsTypeMismatch(Exception):
 
     def __init__(self, units: List[str], unit_type: str):
         """Initializes the exception"""
-        super().__init__()
         self.message = f"Some or all of units {units} not found in type {unit_type}"
+        super().__init__(self.message)
 
 
 # =================================================================================================
@@ -47,6 +58,8 @@ class UnitConvertor:
     def __init__(self, convertor_dictionary: Dict[str, UnitGraph]):
         """Initializes teh unit convertor"""
         self.convertor_dictionary = convertor_dictionary
+        if sys.version_info.minor >= 8:
+            self.is_quick_convert_possible: bool = False
 
     # ===========================================
     def get_unit_types(self):
@@ -128,6 +141,12 @@ class UnitConvertor:
 
     # ===========================================
     def to(self, value, unit2: str, unit_type: str = None):
+        """Quickly convert based on variable name"""
+
+        # Stopping condition
+        if not self.is_quick_convert_possible:
+            raise MinimumPythonVersionNotMet(8)
+
         unit1 = argname("value").split("_")[-1]
         converted_value = self.convert(value, unit1, unit2, unit_type)
         return converted_value

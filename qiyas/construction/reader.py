@@ -37,7 +37,7 @@ def read_unit_table(
         csv_file = csv.reader(file)
         next(csv_file)
         for line in csv_file:
-            unit_graph.add_unit(line[0], line[1], line[2])
+            unit_graph.add_unit(line[0], line[1], line[2], line[3])
 
     # Create the nodes
     with open(unit_converson_table_filename, mode="r", encoding="utf-8") as file:
