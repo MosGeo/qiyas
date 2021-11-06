@@ -2,7 +2,7 @@ include LICENSE
 include README.md
 include CHANGELOG.md
 recursive-include qiyas/unit_tables *
-recursive-include qiyas/graphs *
+recursive-include qiyas/unit_graphs *
 
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
