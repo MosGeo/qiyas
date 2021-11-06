@@ -22,7 +22,7 @@ pip install qiyas
 
 ## Getting started
 
-```
+```python
 from qiyas import qs
 
 # Typical use
