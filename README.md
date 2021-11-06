@@ -11,7 +11,7 @@ This is a very early release to proove the concept. Everything is working as exp
 ## Philosophy
 - Lightweight: it only relies on the `networkx` package to handle graph operations and `varname` to identify variable names.
 - Easy-to-use: customize it easily with new units.
-- non-opinionated: It does not assume anything about your data. It does not create new data type.
+- non-opinionated: It does not assume anything about your data. It does not create new data type. You can pass numpy array (or datatype that can be multiplied by a number) to it without issue.
 
 ## Installation
 Install it in your environment by running the command
