@@ -1,4 +1,4 @@
-'''Initializes qiyas'''
+"""Initializes qiyas"""
 from pathlib import Path
 
 

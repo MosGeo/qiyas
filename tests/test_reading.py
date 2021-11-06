@@ -1,5 +1,3 @@
-
-
 class TestReading:
     def test_one(self):
         x = "this"
