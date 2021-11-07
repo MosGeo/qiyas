@@ -3,7 +3,7 @@
 [![Upload Python Package](https://github.com/MosGeo/qiyas/actions/workflows/python-publish.yml/badge.svg)](https://github.com/MosGeo/qiyas/actions/workflows/python-publish.yml)
 
 
-qias is lightweight easy-to-use non-opinionated unit conversion Python library for scientists and engineers. It is based on graph theory and allows easy customization and addition of new units via script. Each unit need to be only defined by one existing unit. qias is smart enough to figure out the rest.
+qiyas is lightweight easy-to-use non-opinionated unit conversion Python library for scientists and engineers. It is based on graph theory and allows easy customization and addition of new units via script. Each unit need to be only defined by one existing unit. qias is smart enough to figure out the rest.
 
 ## Important note
 This is a very early release to prove the concept. Everything is working as expected and there are no issues. conversion tables need to be added. Currently, there are some units for length, mass, and volume for testing.
