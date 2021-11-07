@@ -1,4 +1,4 @@
-# qias
+# qiyas
 
 [![Upload Python Package](https://github.com/MosGeo/qiyas/actions/workflows/python-publish.yml/badge.svg)](https://github.com/MosGeo/qiyas/actions/workflows/python-publish.yml)
 
