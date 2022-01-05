@@ -10,7 +10,7 @@ def get_unit_types(unit_directory: Path) -> Set[str]:
     """Returns the unit types found in a directory"""
 
     unit_filenames = unit_directory.glob("*")
-    unit_types = set([Path(filename).stem.split("_")[0] for filename in unit_filenames])
+    unit_types = {Path(filename).stem.split("_")[0] for filename in unit_filenames}
     return unit_types
 
 

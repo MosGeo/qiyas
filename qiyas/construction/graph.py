@@ -110,6 +110,7 @@ class UnitGraph(nx.DiGraph):
                 + "package to visualize unit graphs"
             )
             return
+        nx.draw(self)
 
     # ===========================================
     def save(self, filename: Path) -> None:

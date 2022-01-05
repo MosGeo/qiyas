@@ -147,7 +147,7 @@ class UnitConvertor:
         return converted_value
 
     # ===========================================
-    def to(self, value, unit2: str, unit_type: str = None):
+    def to(self, value, unit2: str, unit_type: str = None): # pylint: disable=invalid-name
         """Quickly convert based on variable name"""
 
         # Stopping condition
@@ -157,6 +157,5 @@ class UnitConvertor:
         unit1 = argname("value").split("_")[-1]
         converted_value = self.convert(value, unit1, unit2, unit_type)
         return converted_value
-
 
 # =================================================================================================
