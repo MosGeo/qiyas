@@ -1,1 +1,1 @@
-python run_dev.py
+python dev.py

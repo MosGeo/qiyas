@@ -57,11 +57,12 @@ class TypeDetectionNotPossible(Exception):
 class UnitConvertor:
     """A unit convertor object"""
 
+    is_quick_convert_possible: bool = False
     def __init__(self, convertor_dictionary: Dict[str, UnitGraph]):
         """Initializes teh unit convertor"""
         self.convertor_dictionary = convertor_dictionary
         if sys.version_info.minor >= 8:
-            self.is_quick_convert_possible: bool = False
+            self.is_quick_convert_possible = True
 
     # ===========================================
     def get_unit_types(self):
