@@ -82,13 +82,15 @@ class UnitConvertor:
         return possible_types
 
     # ===========================================
+    @staticmethod
     def validate_possible_type(
-        self, units: List[str], possible_types: List[str]
+        units: List[str], possible_types: List[str]
     ) -> str:
         """Validates the possible type and returns the one type if available"""
         if len(possible_types) == 0:
             raise TypeDetectionNotPossible(units, None)
-        elif len(possible_types) == 1:
+
+        if len(possible_types) == 1:
             unit_type = possible_types[0]
         else:
             raise TypeDetectionNotPossible(units, possible_types)
@@ -98,7 +100,9 @@ class UnitConvertor:
     def validate_units(self, units: List[str], unit_type: str) -> None:
         """Validates the units based a given unit type"""
         unit_graph = self.convertor_dictionary[unit_type]
-        is_valid_unit_type = all([x in unit_graph for x in units])
+        is_valid_unit_type = all(x in unit_graph for x in units)
+        print("hello")
+        print(is_valid_unit_type)
         if not is_valid_unit_type:
             raise UnitsTypeMismatch(units, unit_type)
 
