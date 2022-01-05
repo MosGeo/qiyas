@@ -58,6 +58,7 @@ class UnitConvertor:
     """A unit convertor object"""
 
     is_quick_convert_possible: bool = False
+
     def __init__(self, convertor_dictionary: Dict[str, UnitGraph]):
         """Initializes teh unit convertor"""
         self.convertor_dictionary = convertor_dictionary
@@ -83,9 +84,7 @@ class UnitConvertor:
 
     # ===========================================
     @staticmethod
-    def validate_possible_type(
-        units: List[str], possible_types: List[str]
-    ) -> str:
+    def validate_possible_type(units: List[str], possible_types: List[str]) -> str:
         """Validates the possible type and returns the one type if available"""
         if len(possible_types) == 0:
             raise TypeDetectionNotPossible(units, None)
@@ -147,7 +146,9 @@ class UnitConvertor:
         return converted_value
 
     # ===========================================
-    def to(self, value, unit2: str, unit_type: str = None): # pylint: disable=invalid-name
+    def to(
+        self, value, unit2: str, unit_type: str = None
+    ):  # pylint: disable=invalid-name
         """Quickly convert based on variable name"""
 
         # Stopping condition
@@ -157,5 +158,6 @@ class UnitConvertor:
         unit1 = argname("value").split("_")[-1]
         converted_value = self.convert(value, unit1, unit2, unit_type)
         return converted_value
+
 
 # =================================================================================================

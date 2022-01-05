@@ -1,8 +1,9 @@
 # qiyas
 
 [![Linting](https://github.com/MosGeo/qiyas/actions/workflows/pylint.yml/badge.svg)](https://github.com/MosGeo/qiyas/actions/workflows/pylint.yml)
+[![Testing](https://github.com/MosGeo/qiyas/actions/workflows/pytest.yml/badge.svg)](https://github.com/MosGeo/qiyas/actions/workflows/pytest.yml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 [![Upload Python Package](https://github.com/MosGeo/qiyas/actions/workflows/python-publish.yml/badge.svg)](https://github.com/MosGeo/qiyas/actions/workflows/python-publish.yml)
-
 
 qiyas is lightweight easy-to-use non-opinionated unit conversion Python library for scientists and engineers. It is based on graph theory and allows easy customization and addition of new units via script. Each unit need to be only defined by one existing unit. qias is smart enough to figure out the rest.
 
