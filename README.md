@@ -1,5 +1,6 @@
 # qiyas
 
+[![Linting](https://github.com/MosGeo/qiyas/actions/workflows/pylint.yml/badge.svg)](https://github.com/MosGeo/qiyas/actions/workflows/pylint.yml)
 [![Upload Python Package](https://github.com/MosGeo/qiyas/actions/workflows/python-publish.yml/badge.svg)](https://github.com/MosGeo/qiyas/actions/workflows/python-publish.yml)
 
 
