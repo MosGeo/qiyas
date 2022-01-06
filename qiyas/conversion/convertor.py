@@ -58,7 +58,7 @@ class UnitConvertor:
     """A unit convertor object"""
 
     is_quick_convert_possible: bool = False
-    convertor_dictionary:Dict[str, UnitGraph] = dict()
+    convertor_dictionary: Dict[str, UnitGraph] = dict()
 
     def __init__(self, convertor_dictionary: Dict[str, UnitGraph]):
         """Initializes teh unit convertor"""
@@ -101,8 +101,6 @@ class UnitConvertor:
         """Validates the units based a given unit type"""
         unit_graph = self.convertor_dictionary[unit_type]
         is_valid_unit_type = all(x in unit_graph for x in units)
-        print("hello")
-        print(is_valid_unit_type)
         if not is_valid_unit_type:
             raise UnitsTypeMismatch(units, unit_type)
 
