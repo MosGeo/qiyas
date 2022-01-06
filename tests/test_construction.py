@@ -1,6 +1,6 @@
 """Tests construction"""
 import pytest
-from qiyas.construction.graph import UnitGraph, UnitNotFound
+from qiyas.graph import UnitGraph, UnitNotFound
 
 
 def test_unit_type():

@@ -1,8 +1,8 @@
 """Tests conversion"""
 import sys
 import pytest
-from qiyas.construction.graph import UnitGraph
-from qiyas.conversion.convertor import (
+from qiyas.graph import UnitGraph
+from qiyas.convertor import (
     UnitConvertor,
     TypeDetectionNotPossible,
     UnitsTypeMismatch,
