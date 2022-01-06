@@ -58,6 +58,7 @@ class UnitConvertor:
     """A unit convertor object"""
 
     is_quick_convert_possible: bool = False
+    convertor_dictionary:Dict[str, UnitGraph] = dict()
 
     def __init__(self, convertor_dictionary: Dict[str, UnitGraph]):
         """Initializes teh unit convertor"""
