@@ -21,13 +21,13 @@ def test_initializaiton_quick_convert():
 
 def test_unit_types():
     """Testing convertor dictionary"""
-    unit_graph1 = UnitGraph("Distance")
+    unit_graph1 = UnitGraph("length")
     unit_graph2 = UnitGraph("Weight")
     convertor_dictionary = dict()
-    convertor_dictionary["Distance"] = unit_graph1
+    convertor_dictionary["length"] = unit_graph1
     convertor_dictionary["Weight"] = unit_graph2
     unit_convertor = UnitConvertor(convertor_dictionary)
-    assert unit_convertor.get_unit_types() == ["Distance", "Weight"]
+    assert unit_convertor.get_unit_types() == ["length", "Weight"]
 
 
 def test_possible_types():
@@ -79,7 +79,7 @@ def test_validate_units():
 
 def test_get_multiplier():
     """Test get multiplier"""
-    unit_graph = UnitGraph("Distance")
+    unit_graph = UnitGraph("length")
     unit_graph.add_unit("m", "meter", "m")
     unit_graph.add_unit("cm", "centimeter", "cm")
     unit_graph.add_unit("mm", "millimeter", "mm")
@@ -87,23 +87,23 @@ def test_get_multiplier():
     unit_graph.add_conversion("m", "cm", 100)
 
     convertor_dictionary = {}
-    convertor_dictionary["Distance"] = unit_graph
+    convertor_dictionary["length"] = unit_graph
 
     unit_convertor = UnitConvertor(convertor_dictionary)
 
     assert unit_convertor.get_multiplier("cm", "m")[2] == 0.01
-    assert unit_convertor.get_multiplier("cm", "m", "Distance")[2] == 0.01
+    assert unit_convertor.get_multiplier("cm", "m", "length")[2] == 0.01
 
     with pytest.raises(TypeNotFound):
         unit_convertor.get_multiplier("cm", "m", "Weight")
 
     unit_graph.construct_full_graph()
-    assert unit_convertor.get_multiplier("cm", "m", "Distance")[2] == 0.01
+    assert unit_convertor.get_multiplier("cm", "m", "length")[2] == 0.01
 
 
 def test_convertion():
     """Testing conversion"""
-    unit_graph = UnitGraph("Distance")
+    unit_graph = UnitGraph("length")
     unit_graph.add_unit("m", "meter", "m")
     unit_graph.add_unit("cm", "centimeter", "cm")
     unit_graph.add_unit("mm", "millimeter", "mm")
@@ -111,7 +111,7 @@ def test_convertion():
     unit_graph.add_conversion("m", "cm", 100)
 
     convertor_dictionary = {}
-    convertor_dictionary["Distance"] = unit_graph
+    convertor_dictionary["length"] = unit_graph
 
     unit_convertor = UnitConvertor(convertor_dictionary)
     value_m = 10
