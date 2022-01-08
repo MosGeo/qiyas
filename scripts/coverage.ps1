@@ -1,1 +1,1 @@
-pytest --cov=qiyas tests/
+pytest --cov-report html --cov=qiyas tests/ 

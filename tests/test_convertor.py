@@ -1,6 +1,7 @@
 """Tests conversion"""
 import sys
 import pytest
+from qiyas import qs
 from qiyas.graph import UnitGraph
 from qiyas.convertor import (
     UnitConvertor,
@@ -121,3 +122,8 @@ def test_convertion():
     if sys.version_info.minor >= 8:
         value_cm = unit_convertor.to(value_m, "cm")
         assert value_cm == 1000
+
+
+def test_qiyas():
+    """testing main qiyas functionality"""
+    assert qs.convert(10, "m", "cm", "length") == 1000

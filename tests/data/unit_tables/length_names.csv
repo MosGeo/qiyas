@@ -1,0 +1,12 @@
+unit,name,latex,comments
+m,meter,m,
+cm,centimeter,cm,
+km,kilometer,km,
+mm,millimeter,mm,
+um,micrometer,\mu m,
+nm,nanometer,nm,
+in,inch,in,
+ft,feet,ft,
+yd,yard,yd,
+mi,mile,mi,
+nmi,nautical mile,nmi,

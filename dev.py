@@ -19,8 +19,7 @@ generate_graphs(qiyas.UNIT_TABLES_DIRECTORY, qiyas.UNIT_GRAPHS_DIRECTORY)
 uc = load_convertor_from_qs_files(qiyas.UNIT_GRAPHS_DIRECTORY)
 multplier = uc.get_multiplier("km", "cm", "length")
 print(multplier)
-x_m = 10
-x_cm = uc.to(x_m, "cm")
-print(x_cm)
-
+value_m = 10  # pylint: disable=invalid-name
+value_cm = uc.to(value_m, "cm")
+print(value_cm)
 multplier = uc.get_multiplier("km", "cm")

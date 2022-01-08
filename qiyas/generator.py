@@ -1,7 +1,7 @@
 """A reader for the tables"""
 import csv
 from pathlib import Path
-from typing import Dict, Set
+from typing import Set
 
 from qiyas.graph import UnitGraph
 
@@ -51,24 +51,6 @@ def read_unit_table(
         unit_graph.construct_full_graph()
 
     return unit_graph
-
-
-# =================================================================================================
-def read_unit_tables(
-    unit_directory: Path, is_force_add: bool = False, is_construct: bool = False
-) -> Dict[str, UnitGraph]:
-    """Read the unit table in a dictionary"""
-
-    unit_types = get_unit_types(unit_directory)
-
-    unit_graphs = {}
-    for unit_type in unit_types:
-        unit_graphs[unit_type] = read_unit_table(
-            unit_type, unit_directory, is_force_add, is_construct
-        )
-
-    return unit_graphs
-
 
 # =================================================================================================
 def generate_graphs(

@@ -48,19 +48,12 @@ class UnitGraph(nx.DiGraph):
         unit2: str,
         multiplier,
         is_force_add: bool = False,
-        verbose: bool = False,
     ):
         """Adds a unit conversion"""
-
-        if verbose is True:
-            print(
-                f"Adding conversion between {unit1} and {unit2} to type {self.unit_type}"
-            )
 
         # Check units
         for unit in [unit1, unit2]:
             if not self.has_unit(unit):
-                self.add_node(unit)
                 if is_force_add:
                     self.add_node(unit)
                 else:
@@ -99,18 +92,6 @@ class UnitGraph(nx.DiGraph):
             self.add_conversion(unit_pair[0], unit_pair[1], multiplier)
 
         self.is_constructed = True
-
-    # ===========================================
-    def visualize(self):
-        """Visualizes the unit graph"""
-        matplotlib_specs = importlib.util.find_spec("matplotlib")
-        if matplotlib_specs is None:
-            print(
-                "matplotlib is not installed. Please install this optional "
-                + "package to visualize unit graphs"
-            )
-            return
-        nx.draw(self)
 
     # ===========================================
     def save(self, filename: Path) -> None:
