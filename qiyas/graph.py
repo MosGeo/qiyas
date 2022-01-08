@@ -1,5 +1,4 @@
 """A Unit graph object"""
-import importlib
 from itertools import combinations
 from pathlib import Path
 import pickle
