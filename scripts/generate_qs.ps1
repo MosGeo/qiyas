@@ -1,1 +1,1 @@
-python scripts/generate_qs.ps1
+python ./generate_qs.py

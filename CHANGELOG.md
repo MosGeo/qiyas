@@ -6,6 +6,7 @@
 - Added linting to the source code.
 - Added tests to the source code with coverage 90%+.
 - Source code now follows black format.
+- Added script to generate the qiyas files
 
 # Version 0.2.3
 - Initial prototype release.
