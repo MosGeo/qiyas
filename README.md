@@ -41,7 +41,6 @@ multiplier_info = qs.get_multiplier('m', 'cm')
 
 ## Next
 - Documentation
-- Tests
 - Unit tables
 
 ## Contribution
